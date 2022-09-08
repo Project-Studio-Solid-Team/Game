@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 090c886d17498bc4f99dc2f92fe09345
+guid: 04ea2c34c062a634b839a070269e5995
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,85 +104,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cyborg_jump_0
+      name: who-run_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 6
-        width: 28
-        height: 29
+        x: 5
+        y: 0
+        width: 20
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7131031411845974b84e1ed27da6b715
-      internalID: -2069843214
+      spriteID: c0243c2063ad4054891cd01dabd36408
+      internalID: -943706040
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cyborg_jump_1
+      name: who-run_1
       rect:
         serializedVersion: 2
-        x: 50
-        y: 8
-        width: 28
-        height: 29
+        x: 52
+        y: 0
+        width: 19
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 970e79591c89d304fa21bc4627b5c4c2
-      internalID: 529394317
+      spriteID: 6787ba8f9ff055440a1299deb4cf7698
+      internalID: 1500135668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cyborg_jump_2
+      name: who-run_2
       rect:
         serializedVersion: 2
         x: 98
-        y: 5
+        y: 0
         width: 28
-        height: 31
+        height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ea8ee9e32d94564b910a71c542ded13
-      internalID: -1344518072
+      spriteID: 064856b9423968c4788a41618c773704
+      internalID: -797599841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cyborg_jump_3
+      name: who-run_3
       rect:
         serializedVersion: 2
-        x: 145
-        y: 1
-        width: 30
+        x: 144
+        y: 0
+        width: 32
         height: 33
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f648fe6a712d2cd4b9fb4285354f3519
-      internalID: 1090942688
+      spriteID: 78ca10cccc076954fa0c767e69e49145
+      internalID: -1302676190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: who-run_4
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 0
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c46378c8e07d54492ec6d25e3e3fc3
+      internalID: 743850854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: who-run_5
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 19
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a842d63845ff841ace21b7d9f0f9d5
+      internalID: -1591041481
       vertices: []
       indices: 
       edges: []
@@ -198,10 +240,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Cyborg_jump_0: -2069843214
-      Cyborg_jump_3: 1090942688
-      Cyborg_jump_2: -1344518072
-      Cyborg_jump_1: 529394317
+      who-run_0: -943706040
+      who-run_5: -1591041481
+      who-run_4: 743850854
+      who-run_2: -797599841
+      who-run_3: -1302676190
+      who-run_1: 1500135668
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
