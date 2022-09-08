@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 4f18d2b8703be46489d994462dbb4ba1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Doctor Who
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 894998d4b3c30124d85e37ba1a48e5bf, type: 3}
+  - {fileID: 12800000, guid: 8bec9be6b40fbb44691cfccbb68fca0b, type: 3}
+  - {fileID: 12800000, guid: d6de5e5c6e7c83f4b82cc9947f278b62, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
