@@ -14,7 +14,6 @@ public class Result : MonoBehaviour
     public Button falseButton;
     public UnityEvent onNextQuestion;
     public GameObject quizBox;
-    public 
 
     // Start is called before the first frame update
     void Start()
@@ -40,10 +39,10 @@ public class Result : MonoBehaviour
     private IEnumerator ShowResult()
     {
         quizBox.SetActive(false);
-
         yield return new WaitForSeconds(1.0f);
         correctSprite.SetActive(false);
         incorrectSprite.SetActive(false);
+        
 
         trueButton.interactable = true;
         falseButton.interactable = true;

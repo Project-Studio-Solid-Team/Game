@@ -13,15 +13,12 @@ public class Interaction : MonoBehaviour
     
     void Update()
     {
-        if (!hasInteracted)
-        {
-            if (close)
+        if (!hasInteracted && close)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     DoInteraction();
                 }
-            }
         }
     }
 

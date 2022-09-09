@@ -36,14 +36,4 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
-    {
-        GameObject c = collider.gameObject;
-        if (!c.GetComponent<Interaction>().hasInteracted)
-        {
-            Debug.Log("Quiz is enabled now - will be attached to player script, will update Q, A and Qs variables for dialog every time");
-        }
-    }
-
-
 }
