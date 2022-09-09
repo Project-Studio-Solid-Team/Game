@@ -11,7 +11,7 @@ public class QuestionData : MonoBehaviour
 
     void Start()
     {
-        
+        AskQuestion();
     }
 
     public void AskQuestion()
