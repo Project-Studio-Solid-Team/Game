@@ -7,20 +7,19 @@ public class Doors : MonoBehaviour
 
     public bool isOpen = false;
     public float height;
+    public float speed = 2.0f;
 
     public void raise()
     {
-        Debug.Log("Should be raising door");
-        Vector3 pos = transform.position;
-        transform.position = new Vector3(pos.x, pos.y + (transform.GetComponent<SpriteRenderer>().bounds.size.y * 1.5f), pos.z);
+        Vector2 pos = transform.position;
+        transform.position = new Vector2(pos.x, pos.y + (transform.GetComponent<SpriteRenderer>().bounds.size.y * 1.5f));
         isOpen = true;
     }
 
     public void lower()
     {
-        Debug.Log("Should be lowering door");
-        Vector3 pos = transform.position;
-        transform.position = new Vector3(pos.x, pos.y - (transform.GetComponent<SpriteRenderer>().bounds.size.y * 1.5f), pos.z);
+        Vector2 pos = transform.position;
+        transform.position = new Vector2(pos.x, pos.y - (transform.GetComponent<SpriteRenderer>().bounds.size.y * 1.5f));
         isOpen = false;
     }
 }
