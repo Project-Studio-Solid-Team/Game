@@ -18,11 +18,14 @@ public class GlobalVariables : MonoBehaviour
 
     // Score var
     private int currentScore;
+    private int timeScore;
 
     // Collectables var
     private int fuel = 0; public int fuelMax;
     private int oil = 0; public int oilMax;
     private int ss = 0; public int ssMax;
+    private int totalCol = 0;
+    private int colMax;
 
     // Intro screen
     public GameObject LO;
@@ -30,10 +33,18 @@ public class GlobalVariables : MonoBehaviour
     // Pause menu
     public GameObject pauseMenu;
 
+    // Mission fail
+    public GameObject missFail;
+
+    // Tardis can launch
+    public GameObject playerMessage;
+    private bool canLaunch = false;
+
     // Start is called before the first frame update
     void Start()
     {
         LO.SetActive(true);
+        colMax = fuelMax + oilMax + ssMax;
         Time.timeScale = 0;
         currentScore = 0;
         scoreText.text = currentScore.ToString();
@@ -61,7 +72,7 @@ public class GlobalVariables : MonoBehaviour
             else{
                 timeLeft = 0;
                 timerOn = false;
-                // End level logic here > fail, time's up
+                Time.timeScale = 0; missFail.SetActive(true);
             }
         }
 
@@ -70,6 +81,12 @@ public class GlobalVariables : MonoBehaviour
         {
             Time.timeScale = 0;
             PauseGame();
+        }
+
+        if (totalCol == colMax)
+        {
+            Time.timeScale = 0; totalCol = 0; canLaunch = true;
+            playerMessage.SetActive(true);
         }
     }
 
@@ -103,6 +120,7 @@ public class GlobalVariables : MonoBehaviour
         {
             ss++; ssText.text = string.Format("{0}/{1}", ss, ssMax);
         }
+        totalCol++;
     }
 
     public void ReloadLevel()
@@ -111,15 +129,12 @@ public class GlobalVariables : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
-    public void LevelFail()
-    {
-        // Level fail screen init, show options to retry or return to main
-    }
-
     public void LevelSuccess()
     {
-        // Level success init, show option to retry or return to main
-        // Post score to DB
+        timeScore = (int) timeLeft;
+        currentScore += timeScore;
+        // send score to database
+        // show success screen with final score to player
     }
 
     public void PauseGame()
@@ -133,15 +148,21 @@ public class GlobalVariables : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void PlayerMessage()
+    {
+        playerMessage.SetActive(false);
+        Time.timeScale = 1;
+    }
+
     public void ReturnToMainMenu()
     {
         // Return to main menu here
         // For use with pause menu and end game screen
     }
 
-    public void AddFinalScore()
+    public bool CanLaunch()
     {
-        // Need to add this depending on time
+        return canLaunch;
     }
 
 }
