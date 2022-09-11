@@ -7662,7 +7662,7 @@ MonoBehaviour:
   fuelText: {fileID: 1216357945}
   oilText: {fileID: 779662249}
   ssText: {fileID: 209056786}
-  timeLeft: 5
+  timeLeft: 300
   timerOn: 0
   fuelMax: 2
   oilMax: 1
