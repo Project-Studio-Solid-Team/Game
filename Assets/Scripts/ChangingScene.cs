@@ -29,9 +29,9 @@ public class ChangingScene : MonoBehaviour
         SceneManager.LoadScene (sceneName:"Settings");
     }
 
-    public void SwitchPlayScene()
+    public void SwitchLevelMenu()
     {
-        SceneManager.LoadScene (sceneName:"Play");
+        SceneManager.LoadScene (sceneName:"LevelMenu");
     }
 
     public void SwitchLeadereboardScene()
@@ -42,5 +42,10 @@ public class ChangingScene : MonoBehaviour
     public void SwitchBack()
     {
         SceneManager.LoadScene (sceneName:"MainMenu");
+    }
+
+    public void SwitchLevel()
+    {
+        SceneManager.LoadScene (sceneName:this.name);
     }
 }
