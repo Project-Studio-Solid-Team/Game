@@ -7,6 +7,9 @@ public class Launching : MonoBehaviour
     
     public bool close = false;
     public bool ready = false;
+    private int distance;
+    private int time;
+    private int answer;
 
     // Messages for player
     public GameObject nr;
@@ -29,10 +32,18 @@ public class Launching : MonoBehaviour
         {
          if (Input.GetKeyDown(KeyCode.E))
             {
+                setFigures();
                 // Start final question here
-                Debug.Log("Poopoo");
+                Debug.Log(distance + " " + time + " " + answer);
             }
         }
+    }
+
+    public void setFigures()
+    {
+        distance = Random.Range(10000, 20000);
+        time = Random.Range(3, 7);
+        answer = distance / time;
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

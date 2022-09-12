@@ -297,7 +297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28493941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.09, y: -1.78, z: 0}
+  m_LocalPosition: {x: -1.082, y: -1.916, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3926,24 +3926,25 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'The Daleks have broken time! We must fix it!
+  m_text: 'The Daleks have broken time! We must fix it! I''ll be waiting here in
+    the Tardis.
 
 
-    Your mission is to
-    collect some items and get the Tardis to launch off of Gallifrey - you may encounter
-    people along the way who have questions for you, answer them correctly to increase
-    your score.
+    Your mission is to collect some items so the can Tardis leave
+    Gallifrey - you may encounter people along the way with questions for you, answer
+    them correctly to increase your score.
 
 
-    Collect the following and return to the Tardis to initiate
-    launch:
-
-
-
+    Collect the following and return
+    to the Tardis to initiate launch:
 
 
 
-    You have 5 minutes. Best of luck Time Lord!
+
+
+
+    You have 5 minutes. Best of luck
+    Time Lord!
 
 '
   m_isRightToLeft: 0
@@ -6823,8 +6824,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 40e4c47726b38744ba753a031c409f85, type: 3}
-  m_Color: {r: 0.29556784, g: 0.43707037, b: 0.509434, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9f63248fbba161a4ba088f0ce1246ef6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -6842,8 +6843,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841732190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.3, y: 54.119, z: 13.129108}
-  m_LocalScale: {x: 2.65, y: 9, z: 1}
+  m_LocalPosition: {x: -3.3, y: 52, z: 13.129108}
+  m_LocalScale: {x: 2.65, y: 1.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 637140862}
@@ -12189,8 +12190,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2523e696afe5a34b995315b30d24a43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  close: 0
-  ready: 0
+  close: 1
+  ready: 1
   nr: {fileID: 475682924}
   r: {fileID: 1513058729}
   gv: {fileID: 976591435}
@@ -13937,7 +13938,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5:00
+  m_Text: 05:00
 --- !u!222 &1673137700
 CanvasRenderer:
   m_ObjectHideFlags: 0
