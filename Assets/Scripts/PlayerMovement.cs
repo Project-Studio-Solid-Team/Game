@@ -6,10 +6,16 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    private AudioSource jumpSound;
     public Animator animator;
     float horizontalMove = 0f;
     public float runSpeed = 40f;
     bool jump = false;
+
+    void Start()
+    {
+        jumpSound = this.GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            jumpSound.Play();
         }
 
 

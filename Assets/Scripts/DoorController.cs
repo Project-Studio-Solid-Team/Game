@@ -7,7 +7,14 @@ public class DoorController : MonoBehaviour
     public GameObject door1;
     public GameObject door2;
     public GameObject prompt; //Show interaction prompt
+    public GameObject button;
+    private AudioSource buttonPress; 
     public bool close = false;
+
+    void Start()
+    {
+        buttonPress = button.GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,6 +24,7 @@ public class DoorController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
                 {
                 DoInteraction();
+                buttonPress.Play();
                 }
         }
     }

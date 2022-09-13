@@ -26,12 +26,14 @@ public class GlobalVariables : MonoBehaviour
     private int ss = 0; public int ssMax;
     private int totalCol = 0;
     private int colMax;
+    private AudioSource foundCollectable;
 
     // Intro screen
     public GameObject LO;
 
     // Pause menu
     public GameObject pauseMenu;
+    private AudioSource pauseSound;  
 
     // Mission fail
     public GameObject missFail;
@@ -51,6 +53,8 @@ public class GlobalVariables : MonoBehaviour
         fuelText.text = string.Format("{0}/{1}", fuel, fuelMax);
         oilText.text = string.Format("{0}/{1}", oil, oilMax);
         ssText.text = string.Format("{0}/{1}", ss, ssMax);
+        pauseSound = pauseMenu.GetComponent<AudioSource>();
+        foundCollectable = this.GetComponent<AudioSource>();
     }
 
     public void LevelPlay()
@@ -121,6 +125,7 @@ public class GlobalVariables : MonoBehaviour
             ss++; ssText.text = string.Format("{0}/{1}", ss, ssMax);
         }
         totalCol++;
+        foundCollectable.Play();
     }
 
     public void ReloadLevel()
@@ -140,11 +145,13 @@ public class GlobalVariables : MonoBehaviour
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
+        pauseSound.Play();
     }
 
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
+        pauseSound.Stop();
         Time.timeScale = 1;
     }
 
