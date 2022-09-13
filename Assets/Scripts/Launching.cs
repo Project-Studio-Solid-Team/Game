@@ -56,8 +56,8 @@ public class Launching : MonoBehaviour
     {
         distance = Random.Range(10000, 20000);
         time = Random.Range(3, 7);
-        answer = distance / time;
-        question.text = string.Format("Well done Time Lord! One last thing, I need to know what velocity is needed to get off this planet.\n\nUsing the rule Velocity = Distance / Time, could you tell me what it is? \n\nWe are {0} metres from the exit distance, and it will take us {1} minutes to get there. (Round to the nearest whole number)", distance, time);
+        answer = Mathf.FloorToInt(distance / time);
+        question.text = string.Format("Well done Time Lord! One last thing, I need to know what velocity is needed to get off this planet.\n\nUsing the rule Velocity = Distance / Time, could you tell me what it is? \n\nWe are {0} metres from the exit distance, and it will take us {1} minutes to get there. (Round down to the nearest whole number)", distance, time);
         lq.SetActive(true);
 
     }
@@ -87,7 +87,7 @@ public class Launching : MonoBehaviour
         launchSound.Play();
         this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, launchForce));
         yield return new WaitForSeconds(2.0f);
-        Debug.Log("End level here");
+        gv.GetComponent<GlobalVariables>().LevelSuccess();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

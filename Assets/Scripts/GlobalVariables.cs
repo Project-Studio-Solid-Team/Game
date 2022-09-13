@@ -38,6 +38,11 @@ public class GlobalVariables : MonoBehaviour
     // Mission fail
     public GameObject missFail;
 
+    // Mission success
+    public GameObject missSuccess;
+    public Text scoreFinal;
+
+
     // Tardis can launch
     public GameObject playerMessage;
     private bool canLaunch = false;
@@ -138,8 +143,8 @@ public class GlobalVariables : MonoBehaviour
     {
         timeScore = (int) timeLeft;
         currentScore += timeScore;
-        // send score to database
-        // show success screen with final score to player
+        scoreFinal.text = string.Format("SCORE: {0}", currentScore);
+        missSuccess.SetActive(true);
     }
 
     public void PauseGame()
