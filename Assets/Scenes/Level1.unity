@@ -2299,7 +2299,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -150, y: 125}
+  m_AnchoredPosition: {x: -150, y: 75}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &238931273
@@ -6191,10 +6191,10 @@ RectTransform:
   m_Father: {fileID: 1894293652}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -150}
-  m_SizeDelta: {x: -50, y: -600}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 200}
+  m_SizeDelta: {x: 850, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &668531560
 CanvasRenderer:
@@ -7400,10 +7400,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
-
-    Good work Time Lord, you did it! Now I''m off to fight off those
-    pesky Daleks and fix time.
+  m_text: 'Good work Time Lord, you did it! Now I''m off to fight off those pesky
+    Daleks and fix time.
 
 
     I couldn''t have done it without your help.
@@ -10488,7 +10486,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 125, y: 125}
+  m_AnchoredPosition: {x: 125, y: 75}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1107472990
@@ -13823,7 +13821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   close: 0
-  ready: 0
+  ready: 1
   question: {fileID: 573285347}
   ans: {fileID: 1657178900}
   lq: {fileID: 1930954236}
