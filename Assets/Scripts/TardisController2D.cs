@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TardisController2D : MonoBehaviour
 {
-    float maxSpeed = 8.0f;
+    float maxSpeed = 12.0f;
     float rotSpeed = 250f;
 
     // Start is called before the first frame update

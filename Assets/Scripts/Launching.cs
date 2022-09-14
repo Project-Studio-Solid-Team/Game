@@ -86,6 +86,7 @@ public class Launching : MonoBehaviour
         //Launch
         launchSound.Play();
         this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, launchForce));
+        gv.GetComponent<GlobalVariables>().timerOn = false;
         yield return new WaitForSeconds(2.0f);
         gv.GetComponent<GlobalVariables>().LevelSuccess();
     }

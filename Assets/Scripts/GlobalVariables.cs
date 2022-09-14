@@ -86,7 +86,7 @@ public class GlobalVariables : MonoBehaviour
         }
 
         // Pause Logic
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) && Time.timeScale != 0)
         {
             Time.timeScale = 0;
             PauseGame();
