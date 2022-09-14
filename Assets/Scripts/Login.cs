@@ -9,6 +9,8 @@ public class Login : MonoBehaviour
     public GameObject password;
     public Button play;
 
+    public bool validated = true;
+
     // [SerializeField] public GameObject Username;
     // [SerializeField] public GameObject Password;
     
@@ -43,7 +45,10 @@ public class Login : MonoBehaviour
 
     public void AllowPlay()
     {
-        play.interactable = true;
+        if (validated) {
+            play.interactable = true;
+        }
+        
     }
 
 
