@@ -446,7 +446,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 864683992}
+      - m_Target: {fileID: 1486339444}
         m_TargetAssemblyTypeName: ChangingScene, Assembly-CSharp
         m_MethodName: SwitchLevel
         m_Mode: 1
@@ -1387,7 +1387,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 864683992}
+      - m_Target: {fileID: 2080632221}
         m_TargetAssemblyTypeName: ChangingScene, Assembly-CSharp
         m_MethodName: SwitchLevel
         m_Mode: 1
