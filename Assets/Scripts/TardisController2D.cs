@@ -6,11 +6,13 @@ public class TardisController2D : MonoBehaviour
 {
     float maxSpeed = 12.0f;
     float rotSpeed = 250f;
+    Vector3 origin;
 
     // Start is called before the first frame update
     void Start()
     {
-        //  
+        origin = transform.position;
+        Debug.Log(origin);  
     }
 
     void Update()
@@ -28,6 +30,27 @@ public class TardisController2D : MonoBehaviour
         pos += rot * vel;
         transform.position = pos;
 
+    }
+
+    // Player Interaction check
+    private void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.gameObject.tag == "Hazard")
+        {
+            StartCoroutine(Reset());
+        }
+    }
+
+    // Return to origin on hazard collision
+    IEnumerator Reset(){
+        //Disable keyboard on collision and send player back to origin
+        this.GetComponent<TrailRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        transform.position = origin;
+
+        //Re-enable keyboard and trail renderer
+        yield return new WaitForSeconds(1.5f);
+        this.GetComponent<TrailRenderer>().enabled = true;
     }
 
 

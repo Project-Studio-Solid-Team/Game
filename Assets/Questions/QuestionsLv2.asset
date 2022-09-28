@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de396c2459364241a67e389a2a65c26, type: 3}
+  m_Name: QuestionsLv2
+  m_EditorClassIdentifier: 
+  currentQuestion: 7
+  questionsList:
+  - question: All MATTER is made of ATOMS
+    isTrue: 1
+    questioned: 0
+  - question: ATOMS are composed of PROTONS, NEUTRONS AND ELECTRONS
+    isTrue: 1
+    questioned: 0
+  - question: Natural radioactivity arises from the decay of NUCLEI in ATOMS
+    isTrue: 1
+    questioned: 0
+  - question: "All MATTER is made by Santa\u2019s Elves "
+    isTrue: 0
+    questioned: 1
+  - question: 'Rearranging atoms to form new substances is called a CHEMICAL REACTION '
+    isTrue: 1
+    questioned: 0
+  - question: 'ATOMS are composed of PROTONS, SLEIGHS AND CANDYCANES '
+    isTrue: 0
+    questioned: 0
+  - question: Natural radioactivity arises from the decay of TINSEL in ATOMS
+    isTrue: 0
+    questioned: 0
+  - question: During a chemical reaction, mass IS NOT created or destroyed
+    isTrue: 1
+    questioned: 0
+  - question: Rearranging atoms to form new substances is called a CHRISTMAS REACTION
+    isTrue: 0
+    questioned: 0
+  - question: 'During a chemical reaction, mass IS created or destroyed '
+    isTrue: 0
+    questioned: 0
+  - question: 'When describing the relationship between protons, neutrons and electrons,
+      scientists refer to the bonding as NATIVITY '
+    isTrue: 0
+    questioned: 0
+  - question: 'A chemical reaction is better known by its scientific term, CAROLING '
+    isTrue: 0
+    questioned: 0
+  - question: RUDOLPH, PRANCER, and DANCER are types of ATOMS
+    isTrue: 0
+    questioned: 0
