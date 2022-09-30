@@ -27,8 +27,8 @@ public class Web : MonoBehaviour
     
     }
 
-    IEnumerator getScores(string username){
-        string sendUrl = url + string.Format("displayscore?username={0}", username);
+    IEnumerator getScores(string username, int scorecount){
+        string sendUrl = url + string.Format("displayscore?username={0}&scorecount={1}", username,scorecount);
         UnityWebRequest www = UnityWebRequest.Get(sendUrl);
         yield return www.SendWebRequest();
 
