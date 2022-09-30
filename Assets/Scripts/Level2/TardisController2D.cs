@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class TardisController2D : MonoBehaviour
 {
-    float maxSpeed = 12.0f;
+    float maxSpeed = 15.0f;
     float rotSpeed = 250f;
+    private int cp = 0;
     Vector3 origin;
+    Vector4 dmgCol1 = new Vector4(0.7f, 0.0f, 0.0f, 0.9f);
+    Vector4 dmgCol2 = new Vector4(0.0f, 0.0f, 0.0f, 0.1f);   
 
     // Start is called before the first frame update
     void Start()
@@ -33,17 +36,16 @@ public class TardisController2D : MonoBehaviour
     }
 
     // Player Interaction check
-    private void OnCollisionEnter2D(Collision2D collider)
+    public void TakeDamage()
     {
-        if (collider.gameObject.tag == "Hazard")
-        {
-            StartCoroutine(Reset());
-        }
+        StartCoroutine(Reset());
+        StartCoroutine(DmgAnim());
     }
 
     // Return to origin on hazard collision
-    IEnumerator Reset(){
-        //Disable keyboard on collision and send player back to origin
+    public IEnumerator Reset(){
+        //Send player back to origin/checkpoint
+
         this.GetComponent<TrailRenderer>().enabled = false;
         yield return new WaitForSeconds(0.5f);
         transform.position = origin;
@@ -53,6 +55,38 @@ public class TardisController2D : MonoBehaviour
         this.GetComponent<TrailRenderer>().enabled = true;
     }
 
+    // Change sprite opacity to indicate damage taken
+    public IEnumerator DmgAnim(){
+        //Start color flash loop
+        Vector4 baseCol = this.GetComponent<SpriteRenderer>().color;
+        int count = 0;
+        while (count < 5)
+        {
+            this.GetComponent<SpriteRenderer>().color = dmgCol1;
+            yield return new WaitForSeconds(0.1f);
+            this.GetComponent<SpriteRenderer>().color = dmgCol2;
+            yield return new WaitForSeconds(0.1f);
+            count++;
+        }
+        this.GetComponent<SpriteRenderer>().color = baseCol;
+    }
 
+    // Set CP value
+    public void SetCp(int x)
+    {
+        cp = x;
+    }
+
+    // Set origin value
+    public void SetOrigin(Vector3 x)
+    {
+        origin = x;
+    }
+
+    // Get CP value
+    public int GetCp()
+    {
+        return cp;
+    }
 
 }

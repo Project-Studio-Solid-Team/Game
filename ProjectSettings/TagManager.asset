@@ -8,6 +8,7 @@ TagManager:
   - Oil
   - SS
   - Hazard
+  - Checkpoint
   layers:
   - Default
   - TransparentFX

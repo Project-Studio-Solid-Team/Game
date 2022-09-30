@@ -4,13 +4,26 @@ using UnityEngine;
 
 public class PlayerHazards : MonoBehaviour
 {
-    public float delay = 1;
+    public float timeOn;
+    public float timeOff;
+    private float delay = 1;
     public bool active = true;
+    public GameObject levelVars;
 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Laser());
+    }
+    
+    // Hazard check for player
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.tag == "Player")
+        {
+            collider.gameObject.GetComponent<TardisController2D>().TakeDamage();
+            levelVars.gameObject.GetComponent<LevelVariables>().SetHits();
+        }
     }
 
     // Coroutine goes here
@@ -20,14 +33,14 @@ public class PlayerHazards : MonoBehaviour
         {
            this.GetComponent<SpriteRenderer>().enabled = false;
            this.GetComponent<BoxCollider2D>().enabled = false;
-           delay = 1.5f;
+           delay = timeOff;
            active = false; 
         }
         else
         {
            this.GetComponent<SpriteRenderer>().enabled = true;
            this.GetComponent<BoxCollider2D>().enabled = true;
-           delay = 2.5f;
+           delay = timeOn;
            active = true; 
         }
         StartCoroutine(Laser());
