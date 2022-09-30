@@ -9,6 +9,7 @@ TagManager:
   - SS
   - Hazard
   - Checkpoint
+  - Present
   layers:
   - Default
   - TransparentFX
