@@ -25,6 +25,7 @@ public class LevelVariables : MonoBehaviour
     private int hits = 0; public int hitsMax;
     private int present = 0; public int presentMax;
     private float multi = 1.5f; private float multiMax = 1.5f; //private float multiMin = 1.0f;
+    public bool ready = false;
     private AudioSource foundCollectable;
 
     // Intro screen
@@ -120,6 +121,11 @@ public class LevelVariables : MonoBehaviour
             present++; presentText.text = string.Format("{0}/{1}", present, presentMax);
         }
         foundCollectable.Play();
+
+        if (present == presentMax)
+        {
+            ready = true;
+        }
     }
 
     public void ReloadLevel()
