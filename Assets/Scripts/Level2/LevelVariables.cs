@@ -45,7 +45,6 @@ public class LevelVariables : MonoBehaviour
 
     // Tardis can launch
     public GameObject playerMessage;
-    private bool canLaunch = false;
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +92,7 @@ public class LevelVariables : MonoBehaviour
 
         if (present == presentMax)
         {
-            Time.timeScale = 0; present = 0; canLaunch = true;
+            Time.timeScale = 0; present = 0;
             playerMessage.SetActive(true);
         }
     }
@@ -138,6 +137,7 @@ public class LevelVariables : MonoBehaviour
     {
         timeScore = (int) timeLeft;
         currentScore += timeScore;
+        currentScore = (int) (currentScore * multi);
         scoreFinal.text = string.Format("SCORE: {0}", currentScore);
         missSuccess.SetActive(true);
     }
@@ -171,11 +171,6 @@ public class LevelVariables : MonoBehaviour
     {
         hits++; hitsText.text = string.Format("{0}/{1}", hits, hitsMax);
         multi -= 0.05f; multiText.text = string.Format("{0}/{1}", multi, multiMax);
-    }
-
-    public bool CanLaunch()
-    {
-        return canLaunch;
     }
 
 }

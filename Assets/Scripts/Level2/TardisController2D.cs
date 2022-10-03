@@ -7,6 +7,8 @@ public class TardisController2D : MonoBehaviour
     float maxSpeed = 15.0f;
     float rotSpeed = 250f;
     private int cp = 0;
+    private bool controllable = true;
+    public LevelVariables lv;
     Vector3 origin;
     Vector4 dmgCol1 = new Vector4(0.7f, 0.0f, 0.0f, 0.9f);
     Vector4 dmgCol2 = new Vector4(0.0f, 0.0f, 0.0f, 0.1f);   
@@ -20,19 +22,21 @@ public class TardisController2D : MonoBehaviour
 
     void Update()
     {
-        // Ship rotations
-        Quaternion rot = transform.rotation;
-        float z = rot.eulerAngles.z;
-        z -= Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
-        rot = Quaternion.Euler(0, 0, z);
-        transform.rotation = rot;
+        if (controllable)
+        {
+            // Ship rotations
+            Quaternion rot = transform.rotation;
+            float z = rot.eulerAngles.z;
+            z -= Input.GetAxis("Horizontal") * rotSpeed * Time.deltaTime;
+            rot = Quaternion.Euler(0, 0, z);
+            transform.rotation = rot;
 
-        // Ship movement
-        Vector3 pos = transform.position;
-        Vector3 vel = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
-        pos += rot * vel;
-        transform.position = pos;
-
+            // Ship movement
+            Vector3 pos = transform.position;
+            Vector3 vel = new Vector3(0, Input.GetAxis("Vertical") * maxSpeed * Time.deltaTime, 0);
+            pos += rot * vel;
+            transform.position = pos;
+        }
     }
 
     // Player Interaction check
@@ -69,6 +73,25 @@ public class TardisController2D : MonoBehaviour
             count++;
         }
         this.GetComponent<SpriteRenderer>().color = baseCol;
+    }
+
+    // Landing transformation
+    public void Landing()
+    {
+        StartCoroutine(Shrink());
+    }
+
+    private IEnumerator Shrink()
+    {
+        float size = 1.0f;
+        while (size >= 0.05f)
+        {
+            size -= 0.02f;
+            this.transform.localScale = new Vector3(size, size, size);
+            yield return new WaitForSeconds(0.05f);
+        }
+        controllable = false;
+        lv.LevelSuccess();
     }
 
     // Set CP value
