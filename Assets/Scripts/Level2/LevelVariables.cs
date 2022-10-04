@@ -140,6 +140,8 @@ public class LevelVariables : MonoBehaviour
         currentScore = (int) (currentScore * multi);
         scoreFinal.text = string.Format("SCORE: {0}", currentScore);
         missSuccess.SetActive(true);
+        Web Webinteraction = new Web();
+        StartCoroutine(Webinteraction.sendScore(PlayerPrefs.GetString("usernamePlayer"), currentScore, 2));
     }
 
     public void PauseGame()
