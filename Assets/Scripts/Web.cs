@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class Web : MonoBehaviour
+public class Web
 {
     //using static public strings so they can be change in the unity IDE
     //I will investigate a different way to do this 
@@ -27,10 +27,11 @@ public class Web : MonoBehaviour
     
     }
 
-    IEnumerator<string> getScores(string username, int scorecount){
+    string[] getScores(string username, int scorecount, int levelid){
         string sendUrl = url + string.Format("displayscore?username={0}&scorecount={1}&levelid={2}", username,scorecount,levelid);
         UnityWebRequest www = UnityWebRequest.Get(sendUrl);
-        yield return www.SendWebRequest();
+        www.SendWebRequest();
+
 
         if(www.result == UnityWebRequest.Result.ConnectionError){
             Debug.Log(www.error);
@@ -42,10 +43,8 @@ public class Web : MonoBehaviour
             string[] scores = System.Text.Encoding.Default.GetString(results).Split(",");
             return scores;
 
-            //at present will be array 
-            //userTopScore:VALUE
-            //TopScore:VALUE
-            // ^ repeated 3 times
         }
+
+        return new string[] {}; // returning empty string if error
     }
 }

@@ -31,6 +31,8 @@ public class Login : MonoBehaviour
     public void UserInput()
     {
         string user = username.GetComponent<TMP_InputField>().text;
+
+        PlayerPrefs.SetString(usernamePlayer, user);
         // Code that uses the username variable.
         Debug.Log(user);
     }
