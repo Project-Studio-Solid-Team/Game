@@ -7,11 +7,21 @@ public class Web
     //using static public strings so they can be change in the unity IDE
     //I will investigate a different way to do this 
     //TODO: ^
+    static public string username = "";
 	static public string webserverIp = "localhost";
 	static public string webserverPort = "9005";
 	string url = string.Format("http://{0}:{1}/unity_", webserverIp, webserverPort);
 	
-    string[] output;
+
+    public bool authUserPass(string user, string pass)
+    {
+        /*if (webcode == 0)
+        return true;
+        else {
+           return false;
+        }*/
+        return false;
+    }
     
     public IEnumerator sendScore(string username, int score, int levelid)
     {	
@@ -43,11 +53,9 @@ public class Web
             //then uses the string split function with a , as the delimiter to make an array of strings
             string[] scores = System.Text.Encoding.Default.GetString(results).Split(",");
             
-            output = scores;
+          
 
         }
     }
-    public string[] getoutput() {
-        return output;
-    }
+   
 }
