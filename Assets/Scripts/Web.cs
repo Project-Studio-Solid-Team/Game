@@ -13,14 +13,23 @@ public class Web
 	string url = string.Format("http://{0}:{1}/unity_", webserverIp, webserverPort);
 	
 
-    public bool authUserPass(string user, string pass)
+    public bool authUserPass(string username, string password)
     {
-        /*if (webcode == 0)
-        return true;
-        else {
-           return false;
-        }*/
-        return false;
+        string sendUrl = url + string.Format("checkuser?username={0}&password={1}", username, password);
+        UnityWebRequest www = UnityWebRequest.Get(sendUrl);
+        www.SendWebRequest();
+        System.Threading.Thread.Sleep(1000);
+
+
+        if(www.result == UnityWebRequest.Result.ConnectionError){
+            Debug.Log(www.error);
+            return false;
+        }else{
+            byte[] results = www.downloadHandler.data;
+            
+            return bool.Parse(results);
+            
+        }
     }
     
     public IEnumerator sendScore(string username, int score, int levelid)
@@ -56,5 +65,6 @@ public class Web
             return System.Text.Encoding.Default.GetString(results).Split(",");
         }
     }
+
    
 }
