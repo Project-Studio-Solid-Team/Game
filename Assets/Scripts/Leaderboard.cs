@@ -8,9 +8,12 @@ public class Leaderboard : MonoBehaviour
     void Start()
     {
         Web Webinteraction = new Web();
-        StartCoroutine(Webinteraction.getScores(PlayerPrefs.GetString("usernamePlayer"), 10, 1));
-        string[] scores = Webinteraction.getoutput();
-        Debug.Log(scores[0]);
+        string[] temp = Webinteraction.getScores(PlayerPrefs.GetString("usernamePlayer"), 10, 1);
+
+        foreach(string temp2 in temp){ 
+            Debug.Log(temp2);
+        }
+        
     }
 
     // Update is called once per frame

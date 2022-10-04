@@ -38,23 +38,22 @@ public class Web
     
     }
 
-    public IEnumerator getScores(string username, int scorecount, int levelid){
+    public string[] getScores(string username, int scorecount, int levelid){
         string sendUrl = url + string.Format("displayscore?username={0}&scorecount={1}&levelid={2}", username,scorecount,levelid);
         UnityWebRequest www = UnityWebRequest.Get(sendUrl);
-        yield return www.SendWebRequest();
+        www.SendWebRequest();
+        System.Threading.Thread.Sleep(1000);
 
 
         if(www.result == UnityWebRequest.Result.ConnectionError){
             Debug.Log(www.error);
+            return new string[0];
         }else{
             byte[] results = www.downloadHandler.data;
             
             //this is a bit messy and i could do it over 2 steps but just converts the input byte array to a string
             //then uses the string split function with a , as the delimiter to make an array of strings
-            string[] scores = System.Text.Encoding.Default.GetString(results).Split(",");
-            
-          
-
+            return System.Text.Encoding.Default.GetString(results).Split(",");
         }
     }
    
