@@ -145,6 +145,9 @@ public class GlobalVariables : MonoBehaviour
         currentScore += timeScore;
         scoreFinal.text = string.Format("SCORE: {0}", currentScore);
         missSuccess.SetActive(true);
+        Web Webinteraction = new Web();
+        StartCoroutine(Webinteraction.sendScore(PlayerPrefs.GetString("usernamePlayer"), currentScore, 1));
+   
     }
 
     public void PauseGame()

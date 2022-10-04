@@ -13821,7 +13821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   close: 0
-  ready: 0
+  ready: 1
   question: {fileID: 573285347}
   ans: {fileID: 1657178900}
   lq: {fileID: 1930954236}
