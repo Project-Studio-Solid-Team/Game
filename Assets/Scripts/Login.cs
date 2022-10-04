@@ -23,19 +23,20 @@ public class Login : MonoBehaviour
         incorrect.SetActive(false);
         PlayerPrefs.SetString("usernamePlayer", username.GetComponent<TMP_InputField>().text);
         // Code that uses the username variable.
-        Debug.Log(username.GetComponent<TMP_InputField>().text);
+        //Debug.Log(username.GetComponent<TMP_InputField>().text);
         // Code that uses the password variable.
-        Debug.Log(password.GetComponent<TMP_InputField>().text);
+        //Debug.Log(password.GetComponent<TMP_InputField>().text);
         AllowPlay();
     }
 
     public void AllowPlay()
     {
-        if (auth.authUserPass(username.GetComponent<TMP_InputField>().text, password.GetComponent<TMP_InputField>().text))
-        Debug.Log("Yes");
+        if (auth.authUserPass(username.GetComponent<TMP_InputField>().text, password.GetComponent<TMP_InputField>().text)){
+            Debug.Log("Yes");
         //do stuff
-        else 
-        incorrect.SetActive(true);
+        }else {
+             incorrect.SetActive(true);
+         }
     }
 
 

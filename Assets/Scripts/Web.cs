@@ -27,7 +27,7 @@ public class Web
         }else{
             byte[] results = www.downloadHandler.data;
             
-            return bool.Parse(results);
+            return (System.Text.Encoding.Default.GetString(results) == "true");
             
         }
     }
