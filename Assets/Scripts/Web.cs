@@ -7,10 +7,20 @@ public class Web
     //using static public strings so they can be change in the unity IDE
     //I will investigate a different way to do this 
     //TODO: ^
+    static public string username = "";
 	static public string webserverIp = "localhost";
 	static public string webserverPort = "9005";
 	string url = string.Format("http://{0}:{1}/unity_", webserverIp, webserverPort);
 	
+    public bool authUserPass(string user, string pass)
+    {
+        /*if (webcode == 0)
+        return true;
+        else {
+           return false;
+        }*/
+        return false;
+    }
     
     IEnumerator sendScore(string username, int score, int levelid)
     {	
