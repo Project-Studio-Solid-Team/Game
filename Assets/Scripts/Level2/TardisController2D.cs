@@ -88,9 +88,12 @@ public class TardisController2D : MonoBehaviour
         {
             size -= 0.02f;
             this.transform.localScale = new Vector3(size, size, size);
+            if (size <= 0.85f)
+            {
+                controllable = false;
+            }
             yield return new WaitForSeconds(0.05f);
         }
-        controllable = false;
         lv.LevelSuccess();
     }
 
