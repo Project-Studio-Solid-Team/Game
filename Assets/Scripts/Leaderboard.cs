@@ -8,9 +8,9 @@ public class Leaderboard : MonoBehaviour
     public GameObject group;
     public GameObject score;
 
-    private string[10] usernames;
-    private string[10] scores;
-    private string[10] classes;
+    private string[] usernames = new string[10];
+    private string[] scores = new string[10];
+    private string[] classes = new string[10];
 
     // Start is called before the first frame update
     void Start()
@@ -18,20 +18,25 @@ public class Leaderboard : MonoBehaviour
         Web Webinteraction = new Web();
         string[] temp = Webinteraction.getScores(PlayerPrefs.GetString("usernamePlayer"), 10, 1);
 
-        int position =0;
+        int position = 0;
         foreach(string temp2 in temp){ 
+           string[] split = temp2.Split(':');
+  
+           usernames[position] = split[0];
+           scores[position] = split[1];
+           classes[position] = split[2];
 
-           string[] out = temp2.Split(":");
-           usernames[index] = out[0];
-           scores[index] = out[1];
-           classes[index] = out[2];
+           
+           position++;
+
+           
         }
 
-        Transform[] ranks = rank.GetComponentsInChildren<Transform>();
-        foreach (Transform child in ranks)
-        {
-            Debug.Log(child);
-        }
+      //  Transform[] ranks = rank.GetComponentsInChildren<Transform>();
+       // foreach (Transform child in ranks)
+       // {
+       //     Debug.Log(child);
+       // }
 
     }
 }   
