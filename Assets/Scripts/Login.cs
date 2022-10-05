@@ -11,7 +11,9 @@ public class Login : MonoBehaviour
     public GameObject inputs;
     public GameObject logBut;
     public Button play;
+    public Button logout;
     public Web auth = new Web();
+    public TextMeshProUGUI welcome;
 
     public bool validated = true;
 
@@ -27,6 +29,8 @@ public class Login : MonoBehaviour
             logBut.SetActive(false);
             validated = true;
             play.GetComponent<Button>().interactable = true;
+            logout.GetComponent<Button>().interactable = true;
+            welcome.text = string.Format("Welcome {0}", PlayerPrefs.GetString("usernamePlayer", ""));
         }
     }
 
@@ -46,11 +50,26 @@ public class Login : MonoBehaviour
         if (auth.authUserPass(username.GetComponent<TMP_InputField>().text, password.GetComponent<TMP_InputField>().text)){
             Debug.Log("Yes");
             validated = true;
+            inputs.SetActive(false);
+            logBut.SetActive(false);
             play.GetComponent<Button>().interactable = true;
+            logout.GetComponent<Button>().interactable = true;
+            welcome.text = string.Format("Welcome {0}", PlayerPrefs.GetString("usernamePlayer", ""));
         //do stuff
         }else {
              incorrect.SetActive(true);
          }
+    }
+
+    public void LogOut()
+    {
+        PlayerPrefs.SetString("usernamePlayer", "");
+        inputs.SetActive(true);
+        logBut.SetActive(true);
+        validated = false;
+        play.GetComponent<Button>().interactable = false;
+        logout.GetComponent<Button>().interactable = false;
+        welcome.text = "";
     }
 
 
