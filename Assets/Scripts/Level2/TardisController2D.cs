@@ -64,6 +64,7 @@ public class TardisController2D : MonoBehaviour
         //Start color flash loop
         Vector4 baseCol = this.GetComponent<SpriteRenderer>().color;
         int count = 0;
+        controllable = false;
         while (count < 5)
         {
             this.GetComponent<SpriteRenderer>().color = dmgCol1;
@@ -73,6 +74,7 @@ public class TardisController2D : MonoBehaviour
             count++;
         }
         this.GetComponent<SpriteRenderer>().color = baseCol;
+        controllable = true;
     }
 
     // Landing transformation

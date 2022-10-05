@@ -171,8 +171,13 @@ public class LevelVariables : MonoBehaviour
 
     public void SetHits()
     {
+        
         hits++; hitsText.text = string.Format("{0}/{1}", hits, hitsMax);
         multi -= 0.05f; multiText.text = string.Format("{0}/{1}", multi, multiMax);
+        if (hits = 10)
+        {
+            missFail.SetActive(true);
+        }
     }
 
 }

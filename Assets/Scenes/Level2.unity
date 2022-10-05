@@ -50591,8 +50591,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GlobalVariables, Assembly-CSharp
+      - m_Target: {fileID: 2118273631}
+        m_TargetAssemblyTypeName: LevelVariables, Assembly-CSharp
         m_MethodName: ReloadLevel
         m_Mode: 1
         m_Arguments:
