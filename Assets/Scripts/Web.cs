@@ -4,10 +4,7 @@ using UnityEngine.Networking;
 
 public class Web
 {
-    //use for localhost testting
-    bool Debug = false;
-
-
+ 
     //using static public strings so they can be change in the unity IDE
     //I will investigate a different way to do this 
     //TODO: ^
@@ -16,11 +13,6 @@ public class Web
 
 	static public string webserverIp = "122.199.34.113";
 	static public string webserverPort = "9105";
-
-    if(Debug){ 
-        webserverIp = "localhost"
-        webserverPort = "9005"
-    }
 
 	string url = string.Format("http://{0}:{1}/unity_", webserverIp, webserverPort);
 	
